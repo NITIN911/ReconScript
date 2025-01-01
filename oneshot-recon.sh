@@ -82,6 +82,12 @@ gospider -S "$scan_path/http.txt" --json | grep "{" | jq -r '.output?' | tee "$s
 
 cat "$scan_path/crawl.txt" | grep "\\.js" | httpx -sr -srd js
 
+## Sort Data
+
+cat "$scan_path/subs.txt" | httpx | tee "$scan_path/urls.txt" | katana | tee "$scan_path/katana-urls.txt" | httpx -mc 200 | tee "$scan_path/katana-200urls.txt"
+
+cat "$scan_path/subs.txt" | httpx -mc 400,404,401 | tee "$scan_path/400.txt" | gau | tee "$scan_path/gau400.txt" | httpx -mc 200 | tee "$scan_path/gau400-200.txt"
+
 ################### ADD SCAN LOGIC HERE ###################
 
 # calculate time diff
