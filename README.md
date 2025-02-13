@@ -10,7 +10,7 @@ This script is designed to help you find collect the bulk of the information we 
    - best-dns-wordlist.txt
    - dnslist-small.txt
    - resolvers.txt
-2. scan
+2. scans
 3. scope
    - Trget folder name. *(anything you want)*
      - target.txt *(inside the file add your target domain or list of domains)*
